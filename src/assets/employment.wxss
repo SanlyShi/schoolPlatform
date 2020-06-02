@@ -1,0 +1,111 @@
+#employmentLayoutWarp .contentBox {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  font-size: 14px;
+  background: #f6f6f8;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+#employmentLayoutWarp em,
+#employmentLayoutWarp i {
+  font-style: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+#employmentLayoutWarp i.el-icon-back {
+  font-weight: bold;
+}
+#employmentLayoutWarp .clearfix {
+  zoom: 1;
+}
+#employmentLayoutWarp .clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+}
+#employmentLayoutWarp .el-form .el-form-item {
+  margin-bottom: 15px;
+}
+#employmentLayoutWarp .el-form .el-form-item .el-textarea {
+  margin-bottom: 5px;
+}
+#employmentLayoutWarp .el-form .el-form-item input,
+#employmentLayoutWarp .el-form .el-form-item textarea {
+  border: 1px solid #979797;
+}
+#employmentLayoutWarp .el-form .el-form-item input:focus,
+#employmentLayoutWarp .el-form .el-form-item textarea:focus {
+  border-color: #409EFF;
+}
+#employmentLayoutWarp .el-form .el-form-item input.el-range-input,
+#employmentLayoutWarp .el-form .el-form-item textarea.el-range-input {
+  border: none;
+}
+#employmentLayoutWarp .el-form .el-form-item input.el-range-input:focus,
+#employmentLayoutWarp .el-form .el-form-item textarea.el-range-input:focus {
+  border: none;
+}
+#employmentLayoutWarp .el-form .el-form-item .el-form-item__error {
+  padding-top: 0;
+}
+#employmentLayoutWarp .el-form .el-form-item.is-required:not(.is-no-asterisk) > .el-form-item__label:before {
+  color: #E85656;
+}
+#employmentLayoutWarp .el-form .el-form-item.is-success .el-input__inner,
+#employmentLayoutWarp .el-form .el-form-item.is-success .el-input__inner:focus,
+#employmentLayoutWarp .el-form .el-form-item.is-success .el-textarea__inner,
+#employmentLayoutWarp .el-form .el-form-item.is-success .el-textarea__inner:focus {
+  border-color: #979797;
+}
+#employmentLayoutWarp .el-form .el-select .el-input .el-select__caret {
+  color: #999;
+}
+#employmentLayoutWarp .el-button--primary {
+  background: #3E92FE;
+  border-color: #3E92FE;
+}
+#employmentLayoutWarp .el-button.el-button--large {
+  height: 44px;
+  padding-left: 26px;
+  padding-right: 26px;
+}
+#employmentLayoutWarp .form input,
+#employmentLayoutWarp .el-input .el-input__inner,
+#employmentLayoutWarp .el-date-editor--timerange,
+#employmentLayoutWarp .el-date-editor--datetimerange {
+  border: 1px solid #979797;
+}
+#employmentLayoutWarp .form input.is-active,
+#employmentLayoutWarp .el-input .el-input__inner.is-active,
+#employmentLayoutWarp .el-date-editor--timerange.is-active,
+#employmentLayoutWarp .el-date-editor--datetimerange.is-active {
+  border-color: #409EFF;
+}
+#employmentLayoutWarp .box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+#employmentLayoutWarp .submitBtn {
+  text-align: center;
+}
+#employmentLayoutWarp .submitBtn a {
+  width: 140px;
+  height: 44px;
+  line-height: 44px;
+  color: #fff!important;
+  text-align: center;
+  border-radius: 4px;
+  background: #3e92fe;
+}
+#employmentLayoutWarp .edui-default .edui-editor-toolbarboxouter {
+  border: none;
+  background: white;
+}
+#employmentLayoutWarp pre {
+  border: none;
+  background: transparent;
+}

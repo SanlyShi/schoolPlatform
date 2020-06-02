@@ -1,0 +1,292 @@
+/****************
+ version : 0.5.6
+ ****************/
+
+ .wf-main {
+  background: #eee;
+  font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";
+}
+
+.wf-workspace {
+  cursor: move;
+  user-select: none;
+}
+
+.wf-bg-undertone {
+  fill: #b0bec5;
+}
+
+.wf-bg-strip {
+  stroke: #cfd8dc;
+}
+
+.wf-move-edge-btn {
+  fill: rgba(0,0,0,.4);
+  cursor: pointer;
+}
+
+.wf-move-edge-btn .wf-move-edge-btn-box, .wf-move-edge-btn:hover .wf-move-edge-btn-box {
+  fill: transparent;
+}
+
+.wf-move-edge-btn:hover {
+  fill: #298df7;
+}
+
+.wf-node {
+  cursor: pointer;
+}
+
+.wf-node:hover .wf-node-box {
+  filter: url(#shadow);
+}
+
+.wf-node.selected .wf-node-box {
+  stroke: #298df7;
+  filter: url(#shadow);
+}
+
+.wf-node.selected .wf-node-text {
+  fill: #298df7;
+}
+
+.wf-node-box {
+  fill: #F5F5F5;
+  stroke: #586D7A;
+  stroke-width: 2;
+}
+
+.wf-node-text {
+  font-size: 16px;
+  fill: #586D7A;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+
+.wf-node-placeholder .wf-node-box{
+  fill: transparent!important;
+  stroke: #586D7A!important;
+  stroke-dasharray: 5;
+}
+
+.wf-node-placeholder .wf-node-text {
+  fill: #586D7A!important;
+}
+
+.wf-node-placeholder .wf-node-arrow, .wf-node-placeholder .wf-node-delete {
+  visibility: hidden!important;
+}
+
+.wf-node-dragging .wf-node-delete{
+  visibility: hidden!important;
+}
+
+.wf-workspace.readonly .wf-node-delete, .wf-workspace.readonly .wf-node-arrow {
+  visibility: hidden!important;
+}
+
+.wf-node-dragging .wf-node-box {
+  filter: url(#shadow-heavy);
+}
+
+.wf-node-arrow-head {
+  fill: #586D7A;
+}
+.wf-node-arrow-stick {
+  stroke: #586D7A;
+}
+.wf-node-arrow-box {
+  fill: transparent;
+}
+.wf-node-arrow-tail {
+  /*stroke: #586D7A;*/
+  fill: #586D7A;
+}
+
+.wf-node-arrow:hover  {
+  filter: url(#shadow)
+}
+
+.wf-node-waiting .wf-node-box {
+  stroke-dasharray: 5;
+  fill: transparent;
+}
+
+.wf-node-waiting:hover .wf-node-box {
+  stroke-dasharray: 0;
+  fill: #F5F5F5;
+  stroke: #586D7A;
+
+  -webkit-transition: fill 0.2s, stroke 0.3s;
+  -moz-transition: fill 0.2s, stroke 0.3s;
+  -ms-transition: fill 0.2s, stroke 0.3s;
+  -o-transition: fill 0.2s, stroke 0.3s;
+  transition: fill 0.2s, stroke 0.3s;
+}
+
+.wf-node-waiting-current {
+
+}
+
+.wf-node-unreachable {
+  fill-opacity: 0.5;
+  stroke-opacity: 0.5;
+  pointer-events: none;
+}
+.wf-node-delete {
+  visibility: hidden;
+}
+
+.wf-node-delete circle {
+  fill: #586D7A;
+}
+.wf-node-delete path {
+  fill: white;
+}
+.wf-node:hover .wf-node-delete {
+  visibility: visible;
+}
+
+.wf-node:hover.wf-node-reachable .wf-node-delete, .wf-node:hover.wf-node-unreachable .wf-node-delete {
+  visibility: hidden;
+}
+
+.wf-node-reachable .wf-node-arrow {
+  visibility: hidden!important;
+}
+
+.wf-node-delete:hover circle {
+  filter: url(#shadow);
+  fill: #298df7;
+}
+
+.wf-line-link {
+  fill: #546E7A;
+  stroke: #546E7A;
+  stroke-width: 2;
+}
+.wf-line-link-end {
+  fill: #546E7A;
+}
+
+.wf-line-link-text {
+  fill: #546E7A;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.wf-node-id-debug {
+  fill: #546E7A;
+  font-size: 12px;
+}
+
+@keyframes marchingAnts {
+  to { stroke-dashoffset: -20; }
+}
+.wf-race-line {
+  stroke-dasharray: 5;
+  animation: marchingAnts 1s forwards infinite linear;
+  stroke: #586D7A;
+  stroke-width: 1;
+  fill: none;
+}
+
+
+
+/**************
+datetime mode
+**************/
+.wf-datetime-mode {
+  background: transparent;
+}
+.wf-datetime-mode .wf-bg-undertone, .wf-datetime-mode .wf-bg-strip {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.wf-datetime-mode .wf-node-box {
+  fill: #fff;
+  border-radius: 2px;
+  stroke-width: 0;
+  filter: url(#shadow-datetime);
+}
+
+.wf-datetime-mode .wf-node:hover .wf-node-box {
+  filter: url(#shadow-heavy);
+}
+
+.wf-datetime-mode .wf-node.selected .wf-node-box {
+  stroke: #298df7;
+  stroke-width: 1;
+  filter: url(#shadow-heavy);
+}
+
+.wf-datetime-mode .wf-node-arrow-head {
+  fill: #298df7;
+}
+.wf-datetime-mode .wf-node-arrow-stick {
+  stroke: rgba(63,81,181,0.4);
+}
+.wf-datetime-mode .wf-node-arrow-tail {
+  fill: #298df7;
+}
+
+.wf-datetime-mode .wf-line-link {
+  fill: rgba(63,81,181,0.4);
+  stroke: rgba(63,81,181,0.4);
+  stroke-width: 2;
+}
+.wf-datetime-mode .wf-line-link-end {
+  fill: #298df7;
+}
+
+.wf-datetime-mode .wf-line-link-text {
+  fill: #298df7;
+  font-size: 13px;
+  font-weight: 600;
+  visibility: hidden;
+}
+
+.wf-datetime-mode .wf-node-text {
+  fill: rgba(0,0,0,0.4);
+}
+
+.wf-datetime-mode .wf-node-process .wf-node-text, .wf-datetime-mode .wf-node-start .wf-node-text {
+  visibility: hidden;
+}
+
+.wf-datetime-mode .wf-node.wf-node-condition:hover, .wf-datetime-mode .wf-node.wf-node-end:hover {
+  cursor: default;
+}
+
+.wf-datetime-mode .wf-node .wf-node-arrow, .wf-datetime-mode .wf-node .wf-node-delete {
+  visibility: hidden!important;
+}
+
+.wf-datetime-mode .wf-node .wf-datetime-title {
+  font-size: 13px;
+  fill: rgba(0,0,0,0.40);
+}
+.wf-datetime-mode .wf-node .wf-datetime-value {
+  font-size: 13px;
+  fill: rgba(0,0,0,0.78);
+  font-weight: bold;
+  font-family: "Microsoft YaHei";
+}
+
+/**************
+end datetime mode
+**************/
+
+/**************
+question node
+**************/
+
+.wf-node-question .wf-node-box, .wf-node-question.selected .wf-node-box {
+  stroke: #F44336;
+}
+
+.wf-node-question .wf-node-text, .wf-node-question.selected .wf-node-text {
+  fill: #F44336;
+}

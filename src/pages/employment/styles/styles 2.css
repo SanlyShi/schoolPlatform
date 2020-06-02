@@ -1,0 +1,235 @@
+.main-content {
+  padding: 20px;
+}
+.page-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 950px;
+  height: 60px;
+  margin: 0 auto 20px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 60px;
+  background: #ffffff;
+  border-radius: 4px;
+}
+.page-title-status {
+  position: relative;
+  margin: 0 auto 20px;
+  padding: 20px 20px 10px;
+  border-radius: 4px;
+  background: white;
+  font-size: 15px;
+  line-height: 30px;
+}
+.page-title-status .title {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  margin-right: 20px;
+}
+.audit-actions button {
+  width: 140px;
+}
+.table-container {
+  box-shadow: none;
+  border-radius: 4px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.table-container .search-btn {
+  background: transparent!important;
+  width: 44px;
+  height: 44px;
+  margin-left: 24px;
+}
+.back {
+  display: flex;
+  font-size: 16px;
+  color: #666666;
+  height: 24px;
+  line-height: 24px;
+  width: 950px;
+  margin: 16px auto 20px;
+}
+.back i {
+  font-size: 22px;
+  color: #666;
+  margin-right: 10px;
+}
+.back:hover {
+  color: #333;
+  cursor: pointer;
+}
+.module-container {
+  width: 950px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.module {
+  width: 950px;
+  margin: 0 auto;
+  background: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.module ~ .module {
+  margin-top: 0;
+  border-top: 1px solid #e7e7e7;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.module:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.module.module-actions {
+  border-top: none;
+  padding: 20px 20px 67px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.module.module-actions .info {
+  padding: 0;
+}
+.module .title {
+  line-height: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  font-size: 18px;
+}
+.module .title i {
+  display: inline-block;
+  width: 6px;
+  height: 22px;
+  border-radius: 3px;
+  background: #3e92fe;
+  vertical-align: middle;
+}
+.module .title span {
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.module .title a {
+  cursor: pointer;
+  float: right;
+}
+.module .info {
+  padding: 0 20px 20px 20px;
+}
+.module .info .el-form-item__label {
+  font-weight: 500;
+  color: #666666;
+  width: 170px;
+  padding-right: 32px;
+  margin: 0;
+}
+.module .info .el-form-item__label::after {
+  content: ":";
+  font-size: 18px;
+  margin-left: 2px;
+}
+.module .info .el-form-item__content {
+  max-width: 610px;
+  margin-left: 170px;
+}
+.module .info .el-form-item__content .el-input {
+  width: 280px;
+}
+.module .info .el-form-item__content .el-radio {
+  margin-bottom: 0;
+}
+.module .info .line {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+.module .info.info-small .el-form-item {
+  margin-bottom: 5px;
+}
+.module .info.info-small .el-form-item__label {
+  width: 120px;
+  padding-right: 32px;
+}
+.module .info.info-small .el-form-item__content {
+  max-width: 735px;
+  margin-left: 120px;
+}
+.module .info.info-small .el-form-item__content .el-input {
+  width: 280px;
+}
+.module .info.info-edit .el-form-item {
+  margin-bottom: 25px;
+}
+.module ~ .module.module-inline,
+.module.module-inline ~ .module.module-inline {
+  border: none;
+}
+.module.module-inline .title {
+  display: none;
+}
+.editor-page {
+  border: 1px solid #979797;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 14px;
+}
+.editor-page .edui-editor.edui-default {
+  width: 100%;
+}
+.line-height-normal {
+  line-height: normal;
+}
+.table-data thead .table-head th div {
+  overflow: visible;
+}
+.detail-loader {
+  margin-top: 200px;
+}
+.el-form-item__content p {
+  margin-bottom: 0;
+}
+.el-table__row:last-child td {
+  border-bottom: 0;
+}
+.operations-container-action {
+  position: absolute;
+  right: 28px;
+  top: 12px;
+}
+.operations-container {
+  position: absolute;
+  right: -345px;
+  z-index: 999;
+  top: 80px;
+  width: 340px;
+  max-height: calc(100% - 80px);
+  transition: all 100ms;
+  overflow-y: scroll;
+  box-shadow: 0 0 20px -5px #aaa;
+}
+.operations-container.show {
+  right: 0;
+}
+.tab-content {
+  background: white;
+  border-radius: 4px;
+}
+.tab-content .el-tabs__nav-scroll {
+  padding: 15px 20px 0;
+}
+pre {
+  border: none;
+  background: transparent;
+}
+textarea[name='editorValue'] {
+  display: none;
+}

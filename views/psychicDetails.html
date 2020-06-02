@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生心理预约详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <link href="https://cdn.bootcss.com/materialize/1.0.0-rc.2/css/materialize.min.css" rel="stylesheet">
+    <style>
+        body {
+          background: rgba(0,0,0,0.05);
+      }
+
+      .material-icons {
+          vertical-align: middle;
+          transform: translateY(-.1em);
+      }
+      #title {
+          margin: 24px auto 0 auto;
+          text-align: center;
+          font-family: SimSun;
+          font-weight: bold;
+          font-size: 26px;
+          color: #212121;
+          letter-spacing: 0;
+          line-height: 26px;
+      }
+      #main {
+          width: 840px;
+          min-height: 1188px;
+          padding: 20px 100px;
+          overflow: hidden;
+          background: white;
+          position: relative;
+        
+      }
+      #main h1{
+        margin: 0;
+        font-size: 18px;
+        margin-bottom:15px;
+      }
+      .form-group {
+        float: left;
+        display: inline-block;
+        width: 50%;
+        line-height: 30px;
+      }
+      .col2 {
+        width: 25%;
+        float: left;
+        margin-bottom:20px;
+      }
+      .form-group label,.col2 label {
+        color: #757575;
+        font-size: 14px;
+      }
+      .row.block .form-group{
+        display: block;
+        float: none;
+        line-height: 50px;
+        width: 100%;
+      }
+      .row ul li{
+        line-height: 30px;
+        list-style: none;
+        display: flex;
+      }
+     li span {
+       flex: 2;
+     }
+     li span.cl5 {
+       flex: 1;
+     }
+     li span.cl1 {
+       flex: .5;
+     }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div id='main' class="container">
+      <% if (type == 'all'|| type == 'order' ) { %>
+        <div class="row">
+            <h1>基本信息</h1>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label">姓名：</label>
+                    <label class="label-content"><%= studentInfo.name %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">学号：</label>
+                    <label class="label-content"><%= studentInfo.userNo%></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">年级：</label>
+                    <label class="label-content"><%= studentInfo.grade %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">学院：</label>
+                    <label class="label-content"><%= studentInfo.collegeName %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">邮箱：</label>
+                    <label class="label-content"><%= info.reservationVO.email %></label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label two-words-difference-margin">班级：</label>
+                    <label class="label-content"><%= studentInfo.className %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">培养层次：</label>
+                    <label class="label-content"><%= studentInfo.educationLevelLabel %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">政治面貌：</label>
+                    <label class="label-content"><%= studentInfo.politicalStatusLabel %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">性别</label>
+                    <label class="label-content"><%= studentInfo.sexLabel %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">联系方式：</label>
+                    <label class="label-content"><%= studentInfo.contact %></label>
+                  </div>
+                </div>
+              </div>
+    
+        <div class="row">
+            <h1>预约填写额外信息</h1>
+            <div class="col-md-6">
+                 <% var familys = ['其他','父亲','母亲','兄弟','姐妹','祖父','祖母']
+                    var familyList = []
+                 %>
+                
+                  <div class="form-group">
+                    <label class="form-label two-words-difference-margin">家庭成员：</label>
+                    <label class="label-content"><%= familyList.join(',') %>
+                      <% info.reservationVO.familyMembers.forEach(function(item,index) {%>
+                          <%= familys[item.replace('0','')] %>
+                        <% }) %>
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">父母婚姻情况：</label>
+                    <label class="label-content"><%= info.reservationVO.parentsMarriageSituation %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">本次咨询内容：</label>
+                    <label class="label-content"><%= info.reservationVO.content %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">本次咨询备注：</label>
+                    <label class="label-content"><%= info.reservationVO.remark %></label>
+                  </div>
+                  <% if (info.reservationVO.hasPsychiatricHistory == '是') { %>
+
+                 
+                  <div class="form-group">
+                    <label class="form-label">是否有精神科就医经历：</label>
+                    <label class="label-content"><%= info.reservationVO.hasPsychiatricHistory %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">医院：</label>
+                    <label class="label-content"><%= info.reservationVO.hospital %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">医生姓名</label>
+                    <label class="label-content"><%= info.reservationVO.doctor %></label>
+                  </div>
+                  <div class="form-group" >
+                    <label class="form-label">服用药物：</label>
+                    <label class="label-content"><%= info.reservationVO.drug %></label>
+                  </div>
+                  <% } %>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label one-words-difference-margin">家庭精神病史：</label>
+                    <label class="label-content"><%= info.reservationVO.psychiatricHistory?'是':'否' %>：</label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label one-words-difference-margin">是否服用药物：</label>
+                    <label class="label-content"><%= info.reservationVO.takeMedicine?'是':'否' %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">是否有咨询记录：</label>
+                    <label class="label-content"><%= info.reservationVO.hasConsultingExperience?'是':'否' %></label>
+                  </div>
+
+                  <% if (info.reservationVO.hasConsultingExperience == '是') { %>
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">咨询时间：</label>
+                    <label class="label-content"><%= info.reservationVO.consultingDate %></label>
+                  </div>
+                  <div class="form-group" >
+                    <label class="form-label three-words-difference-margin">咨询地点：</label>
+                    <label class="label-content"><%= info.reservationVO.consultingAddress %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">咨询主题：</label>
+                    <label class="label-content"><%= info.reservationVO.consultingMainContent %></label>
+                  </div>
+                  <% } %>
+                  
+                </div>
+        </div>
+        <div class="row">
+            <h1>本次咨询记录</h1> 
+            <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">咨询时间：</label>
+                    <label class="label-content"><%= info.reservationVO.dayTime.dateTime %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">咨询师联系方式：</label>
+                    <label class="label-content"><%= teacher.contact %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">咨询师姓名：</label>
+                    <label class="label-content"><%= teacher.name %></label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label three-words-difference-margin">状态：</label>
+                    <label class="label-content"><%= statusLabel[info.reservationVO.status] %></label>
+                  </div>
+                </div>
+        </div>
+        <% if (history.length) { %>
+        <div class="row">
+            <h1>咨询历史</h1>
+            
+            <ul>
+              <li>
+                <span class="cl1">#</span>
+                <span >咨询时间</span>
+                <span class="cl5">咨询师姓名</span>
+                <span>学生联系方式</span>
+                <span class="cl5">学生评分</span>
+                <span class="cl5">状态</span>
+              </li>
+                <% history.forEach(function(item,index) {%>
+                  <li>
+                    <span class="cl1"><%= index+1 %></span>
+                    <span><%=item.dayTime.dateTime+ ' '+item.dayTime.timeQuantumStart %>-<%=item.dayTime.timeQuantumEnd %></span>
+                    <span class="cl5"><%= item.teacherName %></span>
+                    <span><%= item.contact %></span>
+                    <span class="cl5"><%= item.score %></span>
+                    <span class="cl5"><%= statusLabel[item.status] %></span>
+                  </li>
+                  <% }) %>
+            </ul>
+           
+        </div>
+        <% } %>
+        <% } %>
+        <% if ((type == 'all'|| type == 'record')&&reservationRecordVO) { %>
+        
+        <div class="row block">
+          <h1>记录单详情</h1>
+          <div class="col-md-6">
+            <div class="col2">
+              <label class="form-label three-words-difference-margin">姓名：</label>
+              <label class="label-content"><%= reservationRecordVO.studentName %></label>
+            </div>
+            <div class="col2">
+              <label class="form-label three-words-difference-margin">性别：</label>
+              <label class="label-content"><%= reservationRecordVO.sex %></label>
+            </div>
+            <div class="col2">
+              <label class="form-label three-words-difference-margin">年级：</label>
+              <label class="label-content"><%= reservationRecordVO.grade %></label>
+            </div>
+            <div class="col2">
+              <label class="form-label three-words-difference-margin">次数：</label>
+              <label class="label-content"><%= reservationRecordVO.count %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">咨询时间：</label>
+              <label class="label-content"><%= reservationRecordVO.consultTime %></label>
+            </div>
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">咨询师：</label>
+              <label class="label-content"><%= reservationRecordVO.consultTeacher %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">基本状态：</label>
+              <label class="label-content"><%= reservationRecordVO.baseState %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">主诉内容：</label>
+              <label class="label-content"><%= reservationRecordVO.complaintContent %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">咨询处理：</label>
+              <label class="label-content"><%= reservationRecordVO.handleResult %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">后续安排及备注：</label>
+              <label class="label-content"><%= reservationRecordVO.remark %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="form-label three-words-difference-margin">整体评估：</label>
+              <label class="label-content"><%= evaluationType[reservationRecordVO.evaluationType] %></label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <% if ( reservationRecordVO.signUrl ) { %>
+              <label class="form-label three-words-difference-margin">咨询师签名：</label>
+             
+                <% var url = '/downloads/storage/images/'+ reservationRecordVO.signUrl + '.png' %>
+                <img src="<%= url %>"  alt="">
+              <% } %>
+             
+             
+              
+            </div>
+          </div>
+        </div>
+        <% } %>
+        </div>
+    <script>
+     
+    </script>
+</body>
+</html>

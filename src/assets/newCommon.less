@@ -1,0 +1,1429 @@
+@font-face {
+  font-family: MaterialIcons;
+  src: url("./fonts/MaterialIcons-Regular.woff");
+}
+@red: "red";
+body {
+  color: #303133;
+}
+.shadow_box {
+  background: #ffffff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+.box_wrap {
+  width: 100%;
+  .icon_wrap {
+    i.maticon {
+      color: white;
+    }
+  }
+}
+
+.box_flex {
+  display: flex;
+  display: -webkit-flex;
+  &.inline_flex {
+    display: inline-flex;
+  }
+  .grow_1 {
+    flex-grow: 1;
+  }
+  &.column {
+    flex-direction: column;
+  }
+  &.box_between {
+    justify-content: space-between;
+  }
+  &.flex_between {
+    justify-content: space-between;
+  }
+  &.flex_wrap {
+    flex-wrap: wrap;
+  }
+  &.flex_shrink {
+    flex-shrink: 0;
+  }
+  .flex_shrink {
+    flex-shrink: 0;
+  }
+}
+.flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.justify_center {
+  justify-content: center;
+}
+.align_center {
+  align-items: center;
+}
+
+body #main {
+  .back.pull-left {
+    display: flex;
+    align-items: center;
+    span {
+      height: 30px;
+      line-height: 33px;
+    }
+  }
+  a.back_wrap {
+      color: #666;
+      text-decoration: none;
+      position: relative;
+      top: -9px;
+      cursor: pointer;
+      outline: none;
+  }
+  .form-control{
+    box-shadow: none;
+  }
+  //表格顶部输入框
+  .table-container {
+    .table-data {
+      .table-head {
+        .form-control {
+          border: 1px solid #d9d9d9;
+          font-size: 14px;
+          border-radius: 5px;
+          height: 32px;
+          line-height: 32px;
+          padding: 0 5px;
+          font-weight: normal;
+          max-width: 220px;
+          &:focus {
+            border-color: #4091ff;
+            box-shadow: none;
+          }
+          &:hover {
+            border: 1px solid #4091ff;
+          }
+          &:disabled {
+            background-color: #f5f5f5;
+            color: #585d69;
+            border: 1px solid #d9d9d9;
+          }
+        }
+        .v-select {
+          border-bottom: none;
+        }
+      }
+      .opt-btn {
+        color: #4091ff;
+        text-decoration: none;
+        &:hover {
+          color: #16a4ff;
+        }
+      }
+      .check-opt {
+        .maticon {
+          color: #298df7;
+        }
+      }
+    }
+  }
+  .check-td {
+    .maticon {
+      color: #298df7;
+    }
+  }
+  .big_title {
+    padding: 0px 20px 10px;
+  }
+  .bool-div {
+    height: 26px;
+    width: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    &.active {
+      background-color: #61da94;
+      span {
+        right: 2px;
+        left: auto;
+      }
+    }
+    span {
+      height: 22px;
+      width: 22px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      border-radius: 50%;
+      color: white;
+      background: white;
+    }
+  }
+  .little_title {
+    color: #298df7;
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d8d9da;
+  }
+  .gotopage {
+    .text-left {
+      &.text-left {
+        position: relative;
+        left: -5px;
+      }
+    }
+  }
+  //默认输入框样式修改 flex-container是应用设置的输入框
+  .page-container,
+  .flex-container,
+  .modal-dialog,
+  .preview-container {
+    .search-input,
+    .form-control,
+    .optionInput,
+    .value-input {
+      border: 1px solid #d9d9d9;
+      font-size: 14px;
+      border-radius: 5px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 5px;
+      font-weight: normal;
+      &:focus {
+        border-color: #4091ff;
+        box-shadow: none;
+      }
+    }
+    i.maticon.active {
+      color: #4091ff !important;
+    }
+    .output-active {
+      i.maticon {
+        color: #4091ff;
+      }
+    }
+    .tree-item.active {
+      i.maticon {
+        color: white;
+      }
+    }
+    .remove-icon {
+      &:hover {
+        color: #298df7;
+      }
+    }
+    div.info-value.form-control {
+      border: none;
+      padding: 0;
+    }
+    .advancedSearch-group {
+      & > .value-input {
+        position: relative;
+        top: 1px;
+      }
+    }
+    #schedulingManage {
+      //心理预约排班 特殊处理
+      .form-group {
+        .v-datepicker {
+          display: inline-flex;
+        }
+      }
+    }
+    .form-group {
+      &.edit-class-group {
+        //班级管理 特殊处理
+        .v-datepicker {
+          display: inline-flex;
+        }
+      }
+      // 输入框全局样式
+      .v-textarea {
+        textarea {
+          border: none !important;
+        }
+        border: 1px solid #d9d9d9;
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+      }
+      textarea {
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+        outline: none;
+      }
+      .label {
+        &.require {
+          span {
+            background-image: url("../assets/img/xinghao.png");
+            background-size: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 10px;
+            background-position-y: 2px;
+          }
+        }
+      }
+
+      .form-control {
+        border: 1px solid #d9d9d9;
+        font-size: 14px;
+        border-radius: 5px;
+        height: 32px;
+        line-height: 30px;
+        padding: 0 25px 0 5px;
+        &.disabled {
+          border: 1px solid #d9d9d9;
+        }
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+        &[type="number"] {
+          padding-right: 0;
+        }
+      }
+      &.info-value:hover {
+        border-bottom: none;
+      }
+      .v-datepicker {
+        border-bottom: none;
+        height: 32px;
+        line-height: 32px;
+        &.disabled {
+          .form-control {
+            background-color: #f5f5f5;
+            color: #585d69;
+            border: 1px solid #d9d9d9;
+            & > span {
+              color: #585d69;
+            }
+          }
+        }
+      }
+    }
+    //下拉框全局样式
+    .v-select {
+      //下拉框
+      border-bottom: none;
+      .form-control {
+        padding: 0 35px 0 5px;
+      }
+      &.disabled {
+        .form-control {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+          & > span {
+            color: #585d69;
+            & > i {
+              color: #585d69;
+            }
+          }
+        }
+      }
+      // color:#1578f6;
+      // .form-control {
+      //   border: none;
+      //   font-size: 14px;
+      //   border-radius: 5px;
+      //   height: 32px;
+      //   line-height: 32px;
+      //   color:#1578f6;
+      //   padding: 0 35px 0 5px;
+      //   &.disabled {
+      //     background-color:#f5f5f5;
+      //   }
+      //   span,div,input,.maticon{
+      //     color:#1578f6;
+      //   }
+      // }
+      // &.info-value:hover {
+      //   border-bottom:none;
+      // }
+      // .v-datepicker{
+      //   border-bottom:none;
+      //   height: 32px;
+      //   line-height: 32px;
+      // }
+    }
+
+    //日期选择器全局样式
+    .v-datepicker {
+      .form-control {
+        min-width: 140px;
+      }
+    }
+
+    //单选框
+    .info-options {
+      & > span {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        &:first-child {
+          margin-right: 6px;
+        }
+      }
+    }
+    .radio-area {
+      display: inline-flex;
+      .maticon {
+        font-size: 17px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modal-form-style {
+    width: 220px;
+  }
+  #classManage-page {
+    //班级管理弹窗特殊处理,
+    nav {
+      .form-control {
+        width: 100%;
+      }
+    }
+    .form-control {
+      width: 210px;
+    }
+    .title-search-div {
+      .form-control {
+        width: 120px;
+      }
+    }
+  }
+
+  .page-container {
+    //弹窗通用样式修改
+    .modal-content {
+      .modal-header {
+        background: #298ef8;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        padding: 21px 25px;
+        .modal-title {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 0;
+          background: #298ef8;
+          color: white;
+          padding: 0;
+        }
+      }
+      .modal-footer {
+        border-top: 1px solid #e5e5e5;
+      }
+    }
+
+    //默认按钮样式修改
+    .clearBtnBorder {
+      border-radius: 3px;
+      color: #298df7;
+      background: none;
+      &.btn-primary {
+        font-weight: normal;
+      }
+    }
+
+    .clearBtnBorder:active,
+    .clearBtnBorder:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    // .btn-bgColor-style {
+    //   background: #ffffff;
+    // }
+    .cancel-btn,
+    .reset-btn,
+    .search-btn,
+    .export-btn,
+    .btn-primary,
+    .submit-btn,
+    .check-btn,
+    .historyRecord-btn,
+    .confirm-btn,
+    .checkBtn {
+      background: #edf6ff;
+      border-radius: 3px;
+      font-family: PingFangSC-Medium;
+      font-size: 13px;
+      color: #298df7;
+      letter-spacing: 0.8px;
+      border-color: #baddfe;
+      text-align: left;
+      outline: none;
+      box-shadow: none;
+      padding: 6px 34px;
+      height: 32px;
+      box-sizing: border-box;
+      position: relative;
+      &:active {
+        background: #4091ff;
+        color: white;
+      }
+    }
+    .search-btn.btn{
+      &.pull-right{
+        height: 34px; 
+        margin-right: 10px;
+      }      
+    }
+    .form-save {
+      border-radius: 5px;
+    }
+    .cancel-btn {
+      border: 1px solid #d8d9da;
+      border-radius: 3px;
+      background: #f4f4f6;
+      color: #70727c;
+      &:active {
+        background: #f4f4f6;
+        color: #70727c;
+        opacity: 0.7;
+      }
+    }
+    .submit-btn {
+      margin-right: 12px;
+    }
+
+    //新增活动 新增组织特殊处理
+    .add-activityType,
+    .add-organization,
+    .btn-bgColor-style {
+      &.btn {
+        background: #298df7;
+        color: white;
+      }
+      box-shadow: none;
+      margin-right: 12px;
+      outline: none;
+      padding: 6px 12px;
+      background: #4091ff;
+      color: white;
+      i {
+        color: white;
+      }
+    }
+    .button_1,
+    .button_2,
+    .button_3,
+    .button_4,
+    .button_5,
+    .deleteBtn,
+    .import-btn,
+    .add-btn,
+    .addBtn {
+      //按钮通用样式 所有按钮必须带 btn这个类名 否则视为其他特殊按钮 只使用btn类名 默认为button_1
+      &.btn {
+        border-radius: 3px;
+        font-family: PingFangSC-Medium;
+        font-size: 13px;
+        line-height: 13px;
+        text-align: left;
+        outline: none;
+        width: auto;
+        letter-spacing: 0.8px;
+        padding: 8px 27px 9px 27px;
+        box-sizing: border-box;
+        background: #edf6ff;
+        color: #298df7;
+        border: 1px solid #baddfe;
+        box-shadow: none;
+        outline: none;
+        margin-right: 6px;
+        &:active {
+          background: #4091ff;
+          color: white;
+          i {
+            line-height: 13px;
+            color: white;
+          }
+        }
+        i {
+          line-height: 13px;
+          color: #298df7;
+          &:active {
+            color: white;
+          }
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .table-title-container {
+      .blue.btn {
+        border: none;
+        background: none;
+        color: #298df7;
+        outline: none;
+      }
+    }
+    .button_1.btn,
+    .blue.btn,
+    .green.btn {
+      //按钮type1 默认样式,不输类名也可以
+      background: #edf6ff;
+      color: #298df7;
+      border: 1px solid #baddfe;
+      &:active {
+        background: #4091ff;
+        color: white;
+        i.maticon.active {
+          color: white !important;
+        }
+      }
+    }
+    .button_2.btn,
+    .button_3.btn,
+    .button_4.btn,
+    .button_5.btn {
+      &:disabled {
+        opacity: 0.4;
+      }
+    }
+    .button_2.btn {
+      //按钮type2 成功按钮
+      border: 1px solid #cfe8b8;
+      border-radius: 3px;
+      background: #f0f8ec;
+      color: #79c642;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_3.btn,
+    .orangered.btn,
+    .cancel-btn.btn {
+      //按钮type3 信息按钮
+      border: 1px solid #d8d9da;
+      border-radius: 3px;
+      background: #f4f4f6;
+      color: #70727c;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_4.btn {
+      //按钮type4 警告按钮
+      border: 1px solid #eee2ba;
+      border-radius: 3px;
+      background: #fdf6ec;
+      color: #e5b751;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_5.btn,
+    .deleteBtn.btn {
+      //按钮type5 危险按钮
+      border: 1px solid #f7cdd4;
+      border-radius: 3px;
+      background: #fcedee;
+      color: #f5898b;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_6,
+    .search-btn,
+    .dropdown-toggle {
+      //带有图标的button;需要特殊居中
+      &.btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+      }
+    }
+  }
+  //选项卡相关
+  .nav-tabs {
+    margin-top: 10px;
+    background: white;
+    li {
+      padding: 0 20px;
+      a {
+        border: none;
+        &:hover {
+          background: none;
+          border: none;
+        }
+      }
+      &.active {
+        color: #298df7;
+        border-bottom: 2px solid #298df7;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+body #mainM {
+  .back.pull-left {
+    display: flex;
+    align-items: center;
+    span {
+      height: 30px;
+      line-height: 33px;
+    }
+  }
+  a.back_wrap {
+      color: #666;
+      text-decoration: none;
+      position: relative;
+      top: -9px;
+      cursor: pointer;
+      outline: none;
+  }
+  .form-control{
+    box-shadow: none;
+  }
+  //表格顶部输入框
+  .table-container {
+    .table-data {
+      .table-head {
+        .form-control {
+          border: 1px solid #d9d9d9;
+          font-size: 14px;
+          border-radius: 5px;
+          height: 32px;
+          line-height: 32px;
+          padding: 0 5px;
+          font-weight: normal;
+          max-width: 220px;
+          &:focus {
+            border-color: #4091ff;
+            box-shadow: none;
+          }
+          &:hover {
+            border: 1px solid #4091ff;
+          }
+          &:disabled {
+            background-color: #f5f5f5;
+            color: #585d69;
+            border: 1px solid #d9d9d9;
+          }
+        }
+        .v-select {
+          border-bottom: none;
+        }
+      }
+      .opt-btn {
+        color: #4091ff;
+        text-decoration: none;
+        &:hover {
+          color: #16a4ff;
+        }
+      }
+      .check-opt {
+        .maticon {
+          color: #298df7;
+        }
+      }
+    }
+  }
+  .check-td {
+    .maticon {
+      color: #298df7;
+    }
+  }
+  .big_title {
+    padding: 0px 20px 10px;
+  }
+  .bool-div {
+    height: 26px;
+    width: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+    position: relative;
+    cursor: pointer;
+    &.active {
+      background-color: #61da94;
+      span {
+        right: 2px;
+        left: auto;
+      }
+    }
+    span {
+      height: 22px;
+      width: 22px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      border-radius: 50%;
+      color: white;
+      background: white;
+    }
+  }
+  .little_title {
+    color: #298df7;
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d8d9da;
+  }
+  .gotopage {
+    .text-left {
+      &.text-left {
+        position: relative;
+        left: -5px;
+      }
+    }
+  }
+  //默认输入框样式修改 flex-container是应用设置的输入框
+  .page-container,
+  .flex-container,
+  .modal-dialog,
+  .preview-container {
+    .search-input,
+    .form-control,
+    .optionInput,
+    .value-input {
+      border: 1px solid #d9d9d9;
+      font-size: 14px;
+      border-radius: 5px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 5px;
+      font-weight: normal;
+      &:focus {
+        border-color: #4091ff;
+        box-shadow: none;
+      }
+    }
+    i.maticon.active {
+      color: #4091ff !important;
+    }
+    .output-active {
+      i.maticon {
+        color: #4091ff;
+      }
+    }
+    .tree-item.active {
+      i.maticon {
+        color: white;
+      }
+    }
+    .remove-icon {
+      &:hover {
+        color: #298df7;
+      }
+    }
+    div.info-value.form-control {
+      border: none;
+      padding: 0;
+    }
+    .advancedSearch-group {
+      & > .value-input {
+        position: relative;
+        top: 1px;
+      }
+    }
+    #schedulingManage {
+      //心理预约排班 特殊处理
+      .form-group {
+        .v-datepicker {
+          display: inline-flex;
+        }
+      }
+    }
+    .form-group {
+      &.edit-class-group {
+        //班级管理 特殊处理
+        .v-datepicker {
+          display: inline-flex;
+        }
+      }
+      // 输入框全局样式
+      .v-textarea {
+        textarea {
+          border: none !important;
+        }
+        border: 1px solid #d9d9d9;
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+      }
+      textarea {
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+        outline: none;
+      }
+      .label {
+        &.require {
+          span {
+            background-image: url("../assets/img/xinghao.png");
+            background-size: 10px 10px;
+            background-repeat: no-repeat;
+            padding-left: 10px;
+            background-position-y: 2px;
+          }
+        }
+      }
+
+      .form-control {
+        border: 1px solid #d9d9d9;
+        font-size: 14px;
+        border-radius: 5px;
+        height: 32px;
+        line-height: 30px;
+        padding: 0 25px 0 5px;
+        &.disabled {
+          border: 1px solid #d9d9d9;
+        }
+        &:hover {
+          border: 1px solid #4091ff;
+        }
+        &:disabled {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+        }
+        &[type="number"] {
+          padding-right: 0;
+        }
+      }
+      &.info-value:hover {
+        border-bottom: none;
+      }
+      .v-datepicker {
+        border-bottom: none;
+        height: 32px;
+        line-height: 32px;
+        &.disabled {
+          .form-control {
+            background-color: #f5f5f5;
+            color: #585d69;
+            border: 1px solid #d9d9d9;
+            & > span {
+              color: #585d69;
+            }
+          }
+        }
+      }
+    }
+    //下拉框全局样式
+    .v-select {
+      //下拉框
+      border-bottom: none;
+      .form-control {
+        padding: 0 35px 0 5px;
+      }
+      &.disabled {
+        .form-control {
+          background-color: #f5f5f5;
+          color: #585d69;
+          border: 1px solid #d9d9d9;
+          & > span {
+            color: #585d69;
+            & > i {
+              color: #585d69;
+            }
+          }
+        }
+      }
+      // color:#1578f6;
+      // .form-control {
+      //   border: none;
+      //   font-size: 14px;
+      //   border-radius: 5px;
+      //   height: 32px;
+      //   line-height: 32px;
+      //   color:#1578f6;
+      //   padding: 0 35px 0 5px;
+      //   &.disabled {
+      //     background-color:#f5f5f5;
+      //   }
+      //   span,div,input,.maticon{
+      //     color:#1578f6;
+      //   }
+      // }
+      // &.info-value:hover {
+      //   border-bottom:none;
+      // }
+      // .v-datepicker{
+      //   border-bottom:none;
+      //   height: 32px;
+      //   line-height: 32px;
+      // }
+    }
+
+    //日期选择器全局样式
+    .v-datepicker {
+      .form-control {
+        min-width: 140px;
+      }
+    }
+
+    //单选框
+    .info-options {
+      & > span {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        &:first-child {
+          margin-right: 6px;
+        }
+      }
+    }
+    .radio-area {
+      display: inline-flex;
+      .maticon {
+        font-size: 17px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modal-form-style {
+    width: 220px;
+  }
+  #classManage-page {
+    //班级管理弹窗特殊处理,
+    nav {
+      .form-control {
+        width: 100%;
+      }
+    }
+    .form-control {
+      width: 210px;
+    }
+    .title-search-div {
+      .form-control {
+        width: 120px;
+      }
+    }
+  }
+
+  .page-container {
+    //弹窗通用样式修改
+    .modal-content {
+      .modal-header {
+        background: #298ef8;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        padding: 21px 25px;
+        .modal-title {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 0;
+          background: #298ef8;
+          color: white;
+          padding: 0;
+        }
+      }
+      .modal-footer {
+        border-top: 1px solid #e5e5e5;
+      }
+    }
+
+    //默认按钮样式修改
+    .clearBtnBorder {
+      border-radius: 3px;
+      color: #298df7;
+      background: none;
+      &.btn-primary {
+        font-weight: normal;
+      }
+    }
+
+    .clearBtnBorder:active,
+    .clearBtnBorder:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    // .btn-bgColor-style {
+    //   background: #ffffff;
+    // }
+    .cancel-btn,
+    .reset-btn,
+    .search-btn,
+    .export-btn,
+    .btn-primary,
+    .submit-btn,
+    .check-btn,
+    .historyRecord-btn,
+    .confirm-btn,
+    .checkBtn {
+      background: #edf6ff;
+      border-radius: 3px;
+      font-family: PingFangSC-Medium;
+      font-size: 13px;
+      color: #298df7;
+      letter-spacing: 0.8px;
+      border-color: #baddfe;
+      text-align: left;
+      outline: none;
+      box-shadow: none;
+      padding: 6px 34px;
+      height: 32px;
+      box-sizing: border-box;
+      position: relative;
+      &:active {
+        background: #4091ff;
+        color: white;
+      }
+    }
+    .search-btn.btn{
+      &.pull-right{
+        height: 34px; 
+        margin-right: 10px;
+      }      
+    }
+    .form-save {
+      border-radius: 5px;
+    }
+    .cancel-btn {
+      border: 1px solid #d8d9da;
+      border-radius: 3px;
+      background: #f4f4f6;
+      color: #70727c;
+      &:active {
+        background: #f4f4f6;
+        color: #70727c;
+        opacity: 0.7;
+      }
+    }
+    .submit-btn {
+      margin-right: 12px;
+    }
+
+    //新增活动 新增组织特殊处理
+    .add-activityType,
+    .add-organization,
+    .btn-bgColor-style {
+      &.btn {
+        background: #298df7;
+        color: white;
+      }
+      box-shadow: none;
+      margin-right: 12px;
+      outline: none;
+      padding: 6px 12px;
+      background: #4091ff;
+      color: white;
+      i {
+        color: white;
+      }
+    }
+    .button_1,
+    .button_2,
+    .button_3,
+    .button_4,
+    .button_5,
+    .deleteBtn,
+    .import-btn,
+    .add-btn,
+    .addBtn {
+      //按钮通用样式 所有按钮必须带 btn这个类名 否则视为其他特殊按钮 只使用btn类名 默认为button_1
+      &.btn {
+        border-radius: 3px;
+        font-family: PingFangSC-Medium;
+        font-size: 13px;
+        line-height: 13px;
+        text-align: left;
+        outline: none;
+        width: auto;
+        letter-spacing: 0.8px;
+        padding: 8px 27px 9px 27px;
+        box-sizing: border-box;
+        background: #edf6ff;
+        color: #298df7;
+        border: 1px solid #baddfe;
+        box-shadow: none;
+        outline: none;
+        margin-right: 6px;
+        &:active {
+          background: #4091ff;
+          color: white;
+          i {
+            line-height: 13px;
+            color: white;
+          }
+        }
+        i {
+          line-height: 13px;
+          color: #298df7;
+          &:active {
+            color: white;
+          }
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    .table-title-container {
+      .blue.btn {
+        border: none;
+        background: none;
+        color: #298df7;
+        outline: none;
+      }
+    }
+    .button_1.btn,
+    .blue.btn,
+    .green.btn {
+      //按钮type1 默认样式,不输类名也可以
+      background: #edf6ff;
+      color: #298df7;
+      border: 1px solid #baddfe;
+      &:active {
+        background: #4091ff;
+        color: white;
+        i.maticon.active {
+          color: white !important;
+        }
+      }
+    }
+    .button_2.btn,
+    .button_3.btn,
+    .button_4.btn,
+    .button_5.btn {
+      &:disabled {
+        opacity: 0.4;
+      }
+    }
+    .button_2.btn {
+      //按钮type2 成功按钮
+      border: 1px solid #cfe8b8;
+      border-radius: 3px;
+      background: #f0f8ec;
+      color: #79c642;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_3.btn,
+    .orangered.btn,
+    .cancel-btn.btn {
+      //按钮type3 信息按钮
+      border: 1px solid #d8d9da;
+      border-radius: 3px;
+      background: #f4f4f6;
+      color: #70727c;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_4.btn {
+      //按钮type4 警告按钮
+      border: 1px solid #eee2ba;
+      border-radius: 3px;
+      background: #fdf6ec;
+      color: #e5b751;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_5.btn,
+    .deleteBtn.btn {
+      //按钮type5 危险按钮
+      border: 1px solid #f7cdd4;
+      border-radius: 3px;
+      background: #fcedee;
+      color: #f5898b;
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .button_6,
+    .search-btn,
+    .dropdown-toggle {
+      //带有图标的button;需要特殊居中
+      &.btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 32px;
+      }
+    }
+  }
+  //选项卡相关
+  .nav-tabs {
+    margin-top: 10px;
+    background: white;
+    li {
+      padding: 0 20px;
+      a {
+        border: none;
+        &:hover {
+          background: none;
+          border: none;
+        }
+      }
+      &.active {
+        color: #298df7;
+        border-bottom: 2px solid #298df7;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+// 表格相关
+.table-data {
+  .table-hover > tbody > tr:hover {
+    background: #edf5fe;
+  }
+  thead {
+    .table-head {
+      th {
+        border-bottom: none;
+        div {
+          // overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  .column-content {
+    padding-left: 3px;
+  }
+}
+.table-container .btn-group .btn {
+  &:hover {
+    color: #298df7;
+  }
+}
+.table > tbody > tr:nth-child(1) > td {
+  border-top: none;
+}
+.btn-tab {
+  text-align: right;
+  .submit-btn {
+    padding: 6px 14px !important;
+  }
+}
+.importPageClass {
+  background: white;
+  width: 100%;
+  left: 20px;
+  min-height: 708px;
+  right: 20px;
+  z-index: 11;
+  top: 24px;
+  position: absolute;
+}
+.detail_wrap {
+  padding: 10px;
+}
+.new_icon {
+  background-image: url("../assets/img/new_add.png");
+  width: 28px;
+  height: 28px;
+  background-size: 28px 28px;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.modal-form-group{
+  margin-bottom: 10px;
+  .group_name{
+    &.require {
+        background-image: url("../assets/img/xinghao.png");
+        background-size: 10px 10px;
+        background-repeat: no-repeat;
+        padding-left: 10px;
+        background-position-y: 9px;
+    }
+    color:black;
+    height:32px;
+    line-height: 32px;
+  }
+  .form-control,.v-select{
+    width:220px;
+    margin-right:20px;
+  }
+
+}
+.tab-div {
+  position: relative;
+  height: 40px;
+  margin: 10px 0px 0;
+  background: white;
+  white-space: nowrap;
+  border-bottom: 1px solid #f0f0f0;
+  .apply-container {
+    position: absolute;
+    right: 0;
+  }
+  .tab-list {
+    position: relative;
+    .gm-scroll-view {
+      padding-right: 200px;
+    }
+  }
+  .tab {
+    display: inline-block;
+    // max-width: 200px;
+    width: 150px;
+    padding: 0 20px;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.54);
+    line-height: 40px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    vertical-align: top;
+    &.tab-node {
+      line-height: 20px;
+      p {
+        margin: 0;
+        text-align: left;
+      }
+    }
+    &:hover,
+    &.active {
+      color: #298df7;
+      border-bottom: 2px solid #298df7;
+
+      height: 40px;
+    }
+    margin-right: -4px;
+  }
+}
+//改element-ui的样式
+.my-elwrap {
+  .el-input__inner {
+    height: 32px;
+    line-height: 32px;
+  }
+  .el-cascader {
+    line-height: 32px;
+  }
+}

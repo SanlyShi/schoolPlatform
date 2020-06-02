@@ -1,0 +1,99 @@
+@themeColor: #d3fef9;
+@complementThemeColor: spin(@themeColor, 180);
+@triadicThemeColor2: spin(@themeColor, -120);
+@triadicThemeColor1: spin(@themeColor, 120);
+@150ThemeColor: spin(@themeColor, 150);
+@90ThemeColor: spin(@themeColor, 90);
+@45ThemeColor: spin(@themeColor, 45);
+@30ThemeColor: spin(@themeColor, 30);
+@-30ThemeColor: spin(@themeColor, -30);
+@-45ThemeColor: spin(@themeColor, -45);
+@-90ThemeColor: spin(@themeColor, -90);
+@-150ThemeColor: spin(@themeColor, -150);
+@fontColor: #303133;
+@backColor: rgb(245, 245, 245);
+@frontColor: rgb(255,255,255);
+@heightLight: rgb(29, 250, 59);
+
+@iconWidth-24: 40px;
+@iconHeight-24: 40px;
+@iconTop-24: 8px;
+@iconLeft-24: 8px;
+
+@iconWidth-36: 60px;
+@iconHeight-36: 60px;
+@iconTop-36: 12px;
+@iconLeft-36: 12px;
+
+@iconWidth-44: 69px;
+@iconHeight-44: 69px;
+@iconTop-44: 12.5px;
+@iconLeft-44: 12.5px;
+
+@font-face{
+    font-family: MaterialIcons;
+    src: url("./fonts/MaterialIcons-Regular.woff");
+}
+
+.maticon{
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'MaterialIcons';
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased
+}
+.maticon2{
+    font-family: 'MaterialIcons';
+    font-style: normal;
+    -webkit-font-smoothing: antialiased
+}
+.saasicon{
+    display: inline-block;
+    background-image: url("./fonts/icon-24px.png");
+    width: @iconWidth-24 - 2*@iconLeft-24;
+    height: @iconHeight-24 - 2*@iconTop-24;
+}
+.saasicon-36px{
+    display: inline-block;
+    background-image: url("./fonts/icon-36px.png");
+    width: @iconWidth-36 - 2*@iconLeft-36;
+    height: @iconHeight-36 - 2*@iconTop-36;
+}
+.saasicon-44px{
+    display: inline-block;
+    background-image: url("./fonts/icon-44px.png");
+    width: @iconWidth-44 - 2*@iconLeft-44;
+    height: @iconHeight-44 - 2*@iconTop-44;
+}
+.addClass(@name, @y, @x) {
+    .saasicon-@{name}{
+        background-position: (-(@x * @iconWidth-24 + @iconLeft-24))  (-(@y * @iconHeight-24 + @iconTop-24));
+    }
+    .saasicon-36px-@{name}{
+        background-position: (-(@x * @iconWidth-36 + @iconLeft-36))  (-(@y * @iconHeight-36 + @iconTop-36));
+    }
+    .saasicon-44px-@{name}{
+        background-position: (-(@x * @iconWidth-44 + @iconLeft-44))  (-(@y * @iconHeight-44 + @iconTop-44));
+    }
+}
+
+.addClass(road, 0, 0);.addClass(book, 0, 1);.addClass(camera, 0, 2);.addClass(idcard, 0, 3);.addClass(tuition, 0, 4);.addClass(bankcard, 0, 5);.addClass(list, 0, 6);.addClass(text, 0, 7);.addClass(help, 0, 8);
+.addClass(layer, 1, 0);.addClass(package, 1, 1);.addClass(cap, 1, 2);.addClass(letter, 1, 3);.addClass(calendar, 1, 4);.addClass(menu, 1, 5);.addClass(menu2, 1, 6);.addClass(menu3, 1, 7);.addClass(apply, 1, 8);
+.addClass(info, 2, 0);.addClass(rightcard, 2, 1);.addClass(drippower, 2, 2);.addClass(bulb, 2, 3);.addClass(record, 2, 4);.addClass(direction, 2, 5);.addClass(person, 2, 6);.addClass(envelope, 2, 7);.addClass(reduce, 2, 8);
+.addClass(socialist, 3, 0);.addClass(star,3, 1);.addClass(assets, 3, 2);.addClass(notebook, 3, 3);.addClass(location, 3, 4);.addClass(purse, 3, 5);.addClass(remark, 3, 6);.addClass(statisticsbar, 3, 7);.addClass(home-line, 3, 8);
+.addClass(building, 4, 0);.addClass(geography,4, 1);.addClass(rotate, 4, 2);.addClass(manlove, 4, 3);.addClass(medal, 4, 4);.addClass(pick, 4, 5);.addClass(purse2, 4, 6);.addClass(free, 4, 7);.addClass(public-line, 4, 8);
+.addClass(tag, 5, 0);.addClass(menudone,5, 1);.addClass(travel, 5, 2);.addClass(trophy, 5, 3);.addClass(medal2, 5, 4);.addClass(question, 5, 5);.addClass(excellent, 5, 6);.addClass(search, 5, 7);.addClass(dashbord-line, 5, 8);
+.addClass(road-black, 6, 0);.addClass(book-black, 6, 1);.addClass(camera-black, 6, 2);.addClass(idcard-black, 6, 3);.addClass(tuition-black, 6, 4);.addClass(bankcard-black, 6, 5);.addClass(list-black, 6, 6);.addClass(text-black, 6, 7);.addClass(help-black, 6, 8);
+.addClass(layer-black, 7, 0);.addClass(package-black, 7, 1);.addClass(cap-black, 7, 2);.addClass(letter-black, 7, 3);.addClass(calendar-black, 7, 4);.addClass(menu-black, 7, 5);.addClass(menu2-black, 7, 6);.addClass(menu3-black, 7, 7);.addClass(apply-black, 7, 8);
+.addClass(info-black, 8, 0);.addClass(rightcard-black, 8, 1);.addClass(drippower-black, 8, 2);.addClass(bulb-black, 8, 3);.addClass(record-black, 8, 4);.addClass(direction-black, 8, 5);.addClass(person-black, 8, 6);.addClass(envelope-black, 8, 7);.addClass(reduce-black, 8, 8);
+.addClass(socialist-black, 9, 0);.addClass(star-black,9, 1);.addClass(assets-black, 9, 2);.addClass(notebook-black, 9, 3);.addClass(location-black, 9, 4);.addClass(purse-black, 9, 5);.addClass(remark-black, 9, 6);.addClass(statisticsbar-black, 9, 7);.addClass(toggle-line, 9, 8);
+.addClass(building-black, 10, 0);.addClass(geography-black,10, 1);.addClass(rotate-black, 10, 2);.addClass(manlove-black, 10, 3);.addClass(medal-black, 10, 4);.addClass(pick-black, 10, 5);.addClass(purse2-black, 10, 6);.addClass(free-black, 10, 7);.addClass(note-line, 10, 8);
+.addClass(tag-black, 11, 0);.addClass(menudone-black,11, 1);.addClass(travel-black, 11, 2);.addClass(trophy-black, 11, 3);.addClass(medal2-black, 11, 4);.addClass(question-black, 11, 5);.addClass(excellent-black, 11, 6);.addClass(search-black, 11, 7);.addClass(book-line, 11, 8);
+.addClass(heart, 12, 0);.addClass(fly, 12, 6);.addClass(person, 12, 7);.addClass(success, 12, 8);              
+.addClass(noreview, 13,0);.addClass(personSuccess,13,1);.addClass(waiting,13,2);
+
+

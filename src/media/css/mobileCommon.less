@@ -1,0 +1,137 @@
+/* vux 样式矫正 */
+.vux-popup-dialog{
+  p,label{
+    margin-bottom: 0;
+  }
+}
+.v-transfer-dom{
+  .weui-cells{
+    margin-top: 0;
+  }
+}
+.vux-toast {
+  .weui-toast {
+    width: 100% !important;
+  }
+  .weui-toast_text {
+    top: auto;
+    bottom: 64px;
+    text-align: left;
+    width: 100% !important;
+    padding: 0 16px;
+    background: transparent;
+    .weui-toast__content {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.92);
+      background: #212121;
+      box-shadow: 0 0 8px 0 rgba(0,0,0,0.12), 0 8px 8px 0 rgba(0,0,0,0.12);
+      line-height: 12px;
+      padding: 18px;
+      margin-left: -1px;
+      border-radius: 9px;
+    }
+  }
+}
+
+.header-search {
+  height: 56px;
+  .weui-search-bar {
+    padding: 0;
+    height: 56px;
+    &:before {
+      border-top: 0 solid #ffffff;
+    }
+    &:after {
+      border-bottom: 0 solid #ffffff;
+    }
+  }
+  .weui-search-bar__label {
+    display: none;
+  }
+  .weui-search-bar.weui-search-bar_focusing .weui-search-bar__cancel-btn {
+    display: none;
+  }
+  
+  .weui-search-bar__box {
+    .weui-icon-search {
+      display: none;
+    }
+    .weui-search-bar__input {
+      height: 56px;
+      padding: 0;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.67);
+      font-weight: 500;
+    }
+    .weui-icon-clear {
+      padding: 14px 17px;
+      font-size: 18px;
+      color: rgba(0, 0, 0, 0.24);
+    }
+  }
+  .weui-search-bar__form {
+    background-color: #fff;
+    &.weui-search-bar__form:after {
+      border: 0;
+    }
+  }
+}
+// -----------------------------------------自定义---------
+
+.back-icon {
+  color: rgba(0, 0, 0, 0.54);
+  padding: 5px;
+  margin-top: -4px;
+  margin-left: -7px;
+}
+.right-icon {
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 5px;
+  margin-top: -4px;
+  margin-right: -7px;
+}
+// 上拉加载提示样式
+.nodataText, .noMoreData {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.36);
+  line-height: 24px;
+  font-weight: 500;
+}
+.nodataText {
+  margin-top: 30px;
+}
+.noMoreData {
+  margin: 10px 0;
+}
+
+.xc-pull-refresh-container{
+  transition: all .1s ease;
+}
+.xc-pull-refresh-tip,
+.xc-pull-refresh-release,
+.xc-pull-refresh-loadding
+{
+  &::before{
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.36);
+  }
+}
+.xc-pull-refresh-tip{
+  &::before{
+    content: '下拉刷新';
+  }
+}
+.xc-pull-refresh-release{
+  &::before{
+    content: '释放刷新';
+  }
+}
+.xc-pull-refresh-loadding{
+  &::before{
+    content: '刷新中';
+  }
+}

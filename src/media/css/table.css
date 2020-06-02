@@ -1,0 +1,142 @@
+table{
+	border-radius: 5px;
+}
+
+/*表格标题栏样式*/
+.table-title th{
+	border-top: none!important;
+}
+
+.table-title h3{
+	float: left;
+	line-height: 2;
+}
+
+/*表格搜索栏样式*/
+.searchbar td{
+	border-bottom: none!important;
+}
+
+/*表格全选栏样式*/
+.table-tool th{
+	border-bottom: none!important;
+	-moz-user-select:none;/*火狐*/
+	-webkit-user-select:none;/*webkit浏览器*/
+	-ms-user-select:none;/*IE10*/
+	-khtml-user-select:none;/*早期浏览器*/
+	user-select:none;
+}
+
+.check-opt-div{
+	display: inline-block;
+	overflow: hidden;
+}
+
+.check-opt{
+	margin:0 5px;
+	float: left;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.check-opt span{
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	padding: 1px;
+	margin: 3px 3px 0 0;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.check-opt.active span{
+	background-color: #337ab7;
+	border:none;
+}
+
+.check-info{
+	font-weight: 500;
+	font-size: 12px;
+}
+
+.check-info .unchecked-count,
+.check-info .checked-count{
+	font-weight: 500;
+	font-size: 14px;
+	padding: 0 2px;
+}
+
+/*表格复选框样式*/
+.check-td{
+	text-align:center;
+	vertical-align:middle!important;
+}
+.check-td label{
+	width:15px;
+	height:15px;
+	padding: 1px;
+	margin-bottom:0;
+	border:1px solid #ccc;
+	border-radius:3px;
+	cursor: pointer;
+}
+.check-td input[type=checkbox]{
+	visibility: hidden;
+}
+tbody tr.active .check-td label{
+	background-color: #337ab7;
+	border:none;
+}
+
+
+/*表格header样式*/
+.table-header{
+	background-color: #337ab7;
+}
+.table-header .dropdown-toggle{
+	border: none;
+	background-color: transparent;
+	color: #fff;
+}
+.table-header .dropdown-toggle:active,
+.table-header .dropdown-toggle:hover,
+.table-header .dropdown-toggle:visited{
+	background-color:transparent;
+	outline: none;
+	box-shadow: none;
+	color: #fff;
+}
+
+.table-header th{
+	border: none!important;
+}
+
+.dropdown-menu li.active a{
+	background-color: #fff;
+	color: #000;
+}
+
+.dropdown-menu li span{
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: 0 8px 0 0;
+	border: 1px solid #ccc;
+	color: #000;
+}
+
+.dropdown-menu li.active span{
+	border: none; 
+	background-color: #337ab7;
+}
+
+.dropdown-menu li.active:hover a{
+	background-color: #fff;
+	color: #000;
+}
+
+
+/*分页控件样式*/
+.gotopage{
+	width: 120px;
+	margin: 20px 10px;
+}

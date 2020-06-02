@@ -1,0 +1,148 @@
+
+#employmentLayoutWarp {
+  // h1,h2,h3 {font-size: 14px;}
+  .contentBox  {
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    font-size: 14px;
+    background: #f6f6f8;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  em,i {
+      font-style: normal;
+      display:inline-block;
+      vertical-align: middle;
+  }
+  i.el-icon-back {font-weight: bold;}
+//   span {vertical-align: middle;}
+  .clearfix {
+      zoom: 1;
+  }
+
+  .clearfix:after {
+      content: '';
+      display: block;
+      height: 0;
+      clear: both;
+  }
+
+  .el-form {
+      .el-form-item {
+          // margin-bottom: 15px;
+
+            // .el-form-item__content {
+            //     height: 40px;
+            //     .el-input{
+            //         height: 40px;
+            //         overflow: hidden;
+            //         // height: 32px;
+            //         // line-height: 32px;
+            //     }
+            // }
+          // .el-textarea {
+          //     margin-bottom: 5px;
+          // }
+          label {
+              // height: 32px;
+              // line-height: 32px;
+          }
+
+          input,
+          textarea {
+              // height: 32px;
+              // line-height: 32px;
+              border: 1px solid #979797;
+              &:focus {
+                border-color: #409EFF;
+              }
+              &.el-range-input {
+                border: none;
+                &:focus {
+                  border: none;
+                }
+              }
+          }
+          .el-form-item__error {
+              padding-top: 0;
+          }
+          &.is-error {
+            input,
+            textarea {
+              border-color: #F56C6C;
+            }
+          }
+      }
+
+      .el-form-item.is-required:not(.is-no-asterisk)>.el-form-item__label:before {
+          color: #E85656;
+      }
+
+      .el-form-item.is-success .el-input__inner,
+      .el-form-item.is-success .el-input__inner:focus,
+      .el-form-item.is-success .el-textarea__inner,
+      .el-form-item.is-success .el-textarea__inner:focus {
+          border-color: #979797;
+      }
+
+      .el-select .el-input .el-select__caret {
+          color: #999;
+      }
+  }
+
+  .el-button--primary {
+    background: #3E92FE;
+    border-color: #3E92FE;
+  }
+
+  .el-button {
+    &.el-button--large {
+      height: 44px;
+      padding-left: 26px;
+      padding-right: 26px;
+    }
+  }
+
+  .form input,
+  .el-input .el-input__inner,.el-date-editor--timerange, .el-date-editor--datetimerange {
+      border: 1px solid #979797;
+      &.is-active {
+        border-color: #409EFF;
+      }
+  }
+
+  .box {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+  }
+  .submitBtn {
+    text-align: center;
+    a {
+        width: 140px;
+        height: 44px;
+        line-height: 44px;
+        color: #fff!important;
+        text-align: center;
+        border-radius: 4px;
+        background: #3e92fe;
+    }
+  }
+  .edui-default .edui-editor-toolbarboxouter {
+    border: none;
+    background: white;
+  }
+
+  .editor-page.is-error {
+    border-color: #F56C6C;
+  }
+
+  pre {
+    border: none;
+    background: transparent;
+  }
+}
+
+
